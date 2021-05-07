@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Users.scss";
 
-import axios from 'axios';
+
 
 export default class Users extends Component {
   render() {
