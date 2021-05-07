@@ -18,9 +18,13 @@ export default class Header extends Component {
         <Nav.Item>
           <img src={"assets/img/gh-logo.png"} className="gh-logo" alt="" />
         </Nav.Item>
- 
+
         <Nav.Item>
-          <Nav.Link className="link" active={this.isHomePage()} href="/">
+          <Nav.Link
+            className="link"
+            active={this.isHomePage()}
+            href="/api-github-interview/"
+          >
             Início
           </Nav.Link>
         </Nav.Item>
