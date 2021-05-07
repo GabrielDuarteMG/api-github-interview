@@ -1,0 +1,10 @@
+@import '/src/app/shared/variables';
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $second-color;
+    padding: 2rem;
+    border: 1px;
+    border-radius: 5px;
+}

@@ -1,0 +1,16 @@
+@import '/src/app/shared/variables';
+
+.header {
+    background-color: $principal-color;
+}
+
+.link {
+    color: $white;
+    font-weight: 400;
+}
+
+.gh-logo {
+    width: 8rem;
+    padding-right: 1rem;
+    margin-left: 0.5rem;
+}
