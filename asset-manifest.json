@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/api-github-interview/static/css/main.3bf36e87.chunk.css",
-    "main.js": "/api-github-interview/static/js/main.9016fd0a.chunk.js",
-    "main.js.map": "/api-github-interview/static/js/main.9016fd0a.chunk.js.map",
+    "main.js": "/api-github-interview/static/js/main.6925699d.chunk.js",
+    "main.js.map": "/api-github-interview/static/js/main.6925699d.chunk.js.map",
     "runtime-main.js": "/api-github-interview/static/js/runtime-main.c210670c.js",
     "runtime-main.js.map": "/api-github-interview/static/js/runtime-main.c210670c.js.map",
     "static/css/2.ae6382a3.chunk.css": "/api-github-interview/static/css/2.ae6382a3.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.ae6382a3.chunk.css",
     "static/js/2.559afd48.chunk.js",
     "static/css/main.3bf36e87.chunk.css",
-    "static/js/main.9016fd0a.chunk.js"
+    "static/js/main.6925699d.chunk.js"
   ]
 }
