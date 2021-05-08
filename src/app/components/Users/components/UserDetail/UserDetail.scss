@@ -1,0 +1,59 @@
+@import '/src/app/shared/variables';
+
+.userDetailBox {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    width: 30rem;
+    margin-top: 2rem;
+    height: 150px;
+    border: 1px solid $light-gray;
+    border-radius: 6px;
+    background-color: $white;
+}
+
+.col1 {
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    line-height: 120px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.col2 {
+    width: 80%;
+    height: 50%;
+    padding: 2px;
+    padding-top: 18px;
+
+}
+
+.avatar-img {
+    width: 80%;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+.name-title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1px;
+}
+
+.user-label {
+    line-height: 1px;
+    font-size: 14px;
+}
+
+.bio-label {
+    line-height: 16px;
+    font-size: 14px;
+}
+
+.w-90{
+    width: 90%;
+    max-width: 90% !important;
+}

@@ -23,7 +23,7 @@ export default class Header extends Component {
           <Nav.Link
             className="link"
             active={this.isHomePage()}
-            href="/api-github-interview/"
+            href="/"
           >
             Início
           </Nav.Link>
