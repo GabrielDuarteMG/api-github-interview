@@ -4,6 +4,7 @@ import paginationFactory, {
   PaginationProvider,
   PaginationListStandalone,
 } from "react-bootstrap-table2-paginator";
+import "./ReposModal.scss";
 import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
 
 const columns = [
@@ -23,7 +24,7 @@ const columns = [
 
     formatter: (cellContent, row) => {
       return (
-        <a target="_blank" href={row.html_url}>
+        <a target="_blank" rel="noreferrer" href={row.html_url}>
           {row.full_name}
         </a>
       );
@@ -40,7 +41,7 @@ export default class ReposModal extends Component {
   render() {
     const options = {
       custom: true,
-      paginationSize: 20,
+      paginationSize: 2,
       sizePerPageList: [
         {
           text: "5th",
@@ -62,19 +63,21 @@ export default class ReposModal extends Component {
     const contentTable = ({ paginationProps, paginationTableProps }) => (
       <div>
         <div>
-          <div>
-            <BootstrapTable
-              striped
-              hover
-              keyField="id"
-              data={this.state.data}
-              columns={columns}
-              filter={filterFactory()}
-              {...paginationTableProps}
-            />
-          </div>
+          <BootstrapTable
+            striped
+            hover
+            keyField="id"
+            data={this.state.data}
+            columns={columns}
+            wrapperClasses="table-responsive"
+            filter={filterFactory()}
+            {...paginationTableProps}
+          />
         </div>
-        <PaginationListStandalone {...paginationProps} />
+
+        <div className="pag-limit">
+          <PaginationListStandalone {...paginationProps} />
+        </div>
       </div>
     );
 

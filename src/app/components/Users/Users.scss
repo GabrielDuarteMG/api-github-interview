@@ -8,6 +8,26 @@
     border: 1px;
     border-radius: 5px;
 }
-.username-input{
+
+.username-input {
     width: 15rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .username-input {
+        width: 10rem;
+    }
+
+    .starred-btn {
+        margin-top: 1rem;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .repos-btn {
+        margin-left: 5%;
+        width: 90%;
+    }
+
 }

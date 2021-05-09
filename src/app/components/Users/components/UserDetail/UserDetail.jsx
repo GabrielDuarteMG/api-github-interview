@@ -58,7 +58,7 @@ export default class UserDetail extends Component {
         <Modal
           show={this.state.showModal}
           onHide={this.closeModal}
-          dialogClassName="w-90"
+          dialogClassName="w-90 modal-mb"
         >
           <Modal.Header closeButton>
             <Modal.Title>
@@ -78,19 +78,19 @@ export default class UserDetail extends Component {
             </Button>
           </Modal.Footer>
         </Modal>
-        <div className="col1 green">
+        <div className="col1">
           <img src={profilePicture} className="avatar-img" alt="profile" />
         </div>
-        <div className="col2 yellow">
+        <div className="col2">
           <p className="name-title">{name}</p>
           <p className="user-label">@{this.state.userName}</p>
           <p className="bio-label">{bio}</p>
         </div>
-        <div className="col2 red">
-          <Button onClick={this.openReposModal} variant="dark">
+        <div className="col2">
+          <Button className="repos-btn" onClick={this.openReposModal} variant="dark">
             <JournalBookmarkFill></JournalBookmarkFill> {"  Repositórios"}
           </Button>{" "}
-          <Button onClick={this.openStarredModal} variant="dark">
+          <Button className="starred-btn" onClick={this.openStarredModal} variant="dark">
             <StarFill></StarFill> {" Starred"}
           </Button>
         </div>
