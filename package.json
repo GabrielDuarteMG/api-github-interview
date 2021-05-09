@@ -9,7 +9,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "lodash": "^4.17.21",
-    "node-sass": "^6.0.0",
+    "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-bootstrap-icons": "^1.4.0",
