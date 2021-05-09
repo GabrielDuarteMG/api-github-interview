@@ -41,7 +41,7 @@ export default class ReposModal extends Component {
   render() {
     const options = {
       custom: true,
-      paginationSize: 2,
+      paginationSize: 3,
       sizePerPageList: [
         {
           text: "5th",
