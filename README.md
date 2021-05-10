@@ -10,6 +10,7 @@ Na parte de design foi utilizado o Bootstrap implementado com o módulo compleme
 
 # Getting Started
 
+- Instalação do NodeJS. 
 - Clone este projeto.
 - Em seguida faça a instalação dos módulos com o comando:
  ```
