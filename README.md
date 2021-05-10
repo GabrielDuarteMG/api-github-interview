@@ -12,11 +12,11 @@ Na parte de design foi utilizado o Bootstrap implementado com o módulo compleme
 
 - Clone este projeto.
 - Em seguida faça a instalação dos módulos com o comando:
-- ```
+ ```
     npm install --save
   ```
 - Após a instalação dos módulos utilize o comando abaixo para executar a aplicação:
-- ```
+ ```
     npm start
   ```
 - Em seguida a aplicação estará rodando na porta 3000 seguindo o endereço [http://localhost:3000](http://localhost:3000)
