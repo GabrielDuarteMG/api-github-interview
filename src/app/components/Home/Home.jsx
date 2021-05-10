@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Jumbotron, Container } from "react-bootstrap";
+
 export default class Home extends Component {
   render() {
     return (

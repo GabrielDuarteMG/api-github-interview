@@ -21,10 +21,19 @@ reportWebVitals();
 
 axios.interceptors.request.use(
   (req) => {
+    window["loading"] = true;
     // Interceptor de requisição para adequar API do Github.
     let auth = consts.USER_AUTH;
     if (auth) req.headers.Authorization = `${auth}`;
     return req;
   },
-  (err) => Promise.reject(err)
+  (err) => {
+    Promise.reject(err);
+    window["loading"] = false;
+  }
 );
+
+axios.interceptors.response.use((res) => {
+  window["loading"] = false;
+  return res;
+});

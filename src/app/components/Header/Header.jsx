@@ -20,11 +20,7 @@ export default class Header extends Component {
         </Nav.Item>
 
         <Nav.Item>
-          <Nav.Link
-            className="link"
-            active={this.isHomePage()}
-            href="/"
-          >
+          <Nav.Link className="link" active={this.isHomePage()} href="/">
             Início
           </Nav.Link>
         </Nav.Item>

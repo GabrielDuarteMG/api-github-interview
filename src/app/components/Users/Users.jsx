@@ -10,8 +10,18 @@ export default class Users extends Component {
   constructor(props) {
     super(props);
     this.callGithubUrl = this.callGithubUrl.bind(this);
-    this.state = { userName: "GabrielDuarteMG", userSelected: null };
+    this.state = {
+      userName:
+        this.props.match && this.props.match.params.userName
+          ? this.props.match.params.userName
+          : "",
+      userSelected: null,
+    };
+    if (this.state.userName) {
+      this.callGithubUrl();
+    }
   }
+
   callGithubUrl() {
     this.setState({ userSelected: null });
     axios
@@ -22,6 +32,7 @@ export default class Users extends Component {
         }
       })
       .catch((err) => {
+        window["loading"] = false;
         if (err.response.status === 404) {
           toast.error(
             `Usuário ${this.state.userName} não encontrado no Github, tente novamente!`,

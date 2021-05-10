@@ -1,2 +1,4 @@
 import Home from "./Home";
-export default Home;
+import { withRouter } from "react-router";
+
+export default withRouter(Home);

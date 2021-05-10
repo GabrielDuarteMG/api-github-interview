@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# api-github-interview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto proposto para busca de usuários e repositórios no Github utilizando a API V3.
 
-## Available Scripts
+## Detalhes da aplicação
 
-In the project directory, you can run:
+A aplicação foi desenvolvida utilizando o ReactJS v17.0.2, para gerenciamento de rotas foi utilizado o react-router-dom, e para gerenciamento das requisições para o Github com a gestão do Authorization foi utilizado o axios com sua feature de interceptor.
 
-### `npm start`
+Na parte de design foi utilizado o Bootstrap implementado com o módulo complementar react-bootstrap e react-bootstrap-table-next, utilizando como framework de estilização o sass. E para alguns alertas aos usuários, foi implementado o react-toastify.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Clone este projeto.
+- Em seguida faça a instalação dos módulos com o comando:
+- ```
+    npm install --save
+  ```
+- Após a instalação dos módulos utilize o comando abaixo para executar a aplicação:
+- ```
+    npm start
+  ```
+- Em seguida a aplicação estará rodando na porta 3000 seguindo o endereço [http://localhost:3000](http://localhost:3000)
 
-### `npm test`
+## Requisitos da entrega
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para utilizar os Endpoints abaixo, você precisará estar autenticado, para isso você irá utilizar a autenticação do GITHUB:
 
-### `npm run build`
+- Guia Autenticação: https://docs.github.com/pt/developers/apps/building-oauth-apps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Gostaríamos nos entregasse uma aplicação utilizando a api do GITHUB https://developer.github.com/v3/ consumindo os seguintes endpoints:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Endpoint user: https://api.github.com/users/NOME_USUARIO
+- Endpoint repos: https://api.github.com/users/NOME_USUARIO/repos
+- Endpoint starred: https://api.github.com/users/NOME_USUARIO/starred{/owner}{/repo}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A aplicação deverá constituir três componentes principais:
 
-### `npm run eject`
+- O campo de busca.
+- Visualização de resultados.
+- Dois botões para executar um determinado resultado.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Ao clicar nos botões de repos e starred, deverá mostrar uma lista simples de cada endpoint
+apresentado anteriormente.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Dado um determinado usuário, deverá ser possível navegar diretamente até a página de
+detalhe do usuário sem que seja necessário efetuar uma nova busca. Ex: http://localhost:3000/NOME_USUARIO
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Gostariamos de pesquisar por usuario.
+- Gostariamos de ao clicar no botão de repos, listar repositorios do usuario pesquisado.
+- Gostariamos de ao clicar no botão de starred, listar os repositorios mais visitados por aquele usuario.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Você poderá usar o framework css Bootstrap ou Materialize para construção dos componentes UI (Se preferir, os componentes poderão ser criados do zero, utilizando as boas práticas).
 
-## Learn More
+Você poderá usar os frameworks js para desenvolvimento da sua aplicação ou utilizar o Vanilajs e jQuery.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Você poderá utilizar Jasmine, Mocha ou RhinoUnit para testar os request feitos.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Cenário
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Na página do campo de busca, deverá ser possível inserir nomes de usuários do github, repositórios e os mais visitados pelos os usuários.
