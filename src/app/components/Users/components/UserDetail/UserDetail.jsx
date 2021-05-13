@@ -21,6 +21,8 @@ export default class UserDetail extends Component {
     return this.modalType === "repos";
   }
   modalStatus(status) {
+    // Ignorado tests por ser alteração de estado
+    /* istanbul ignore next */
     this.setState({ showModal: status });
   }
   closeModal() {
@@ -28,6 +30,8 @@ export default class UserDetail extends Component {
   }
   openReposModal() {
     this.modalType = "repos";
+    // Ignorado testes por vinculo axios
+    /* istanbul ignore next */
     axios
       .get(`https://api.github.com/users/${this.state.userName}/repos`)
       .then((resp) => {
@@ -40,6 +44,8 @@ export default class UserDetail extends Component {
 
   openStarredModal() {
     this.modalType = "starred";
+    // Ignorado testes por vinculo axios
+    /* istanbul ignore next */
     axios
       .get(`https://api.github.com/users/${this.state.userName}/starred`)
       .then((resp) => {
@@ -62,7 +68,9 @@ export default class UserDetail extends Component {
         >
           <Modal.Header closeButton>
             <Modal.Title>
-              {this.isModalReposType() ? "Repositórios" : "Starred"}
+              <div id="repos-modal-title">
+                {this.isModalReposType() ? "Repositórios" : "Starred"}
+              </div>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -73,7 +81,11 @@ export default class UserDetail extends Component {
             )}
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="dark" onClick={this.closeModal}>
+            <Button
+              variant="dark"
+              id="close-repos-modal-btn"
+              onClick={this.closeModal}
+            >
               Fechar
             </Button>
           </Modal.Footer>
@@ -82,15 +94,29 @@ export default class UserDetail extends Component {
           <img src={profilePicture} className="avatar-img" alt="profile" />
         </div>
         <div className="col2">
-          <p className="name-title">{name}</p>
-          <p className="user-label">@{this.state.userName}</p>
+          <p id="user-detail-name" className="name-title">
+            {name}
+          </p>
+          <p id="user-detail-username" className="user-label">
+            @{this.state.userName}
+          </p>
           <p className="bio-label">{bio}</p>
         </div>
         <div className="col2">
-          <Button className="repos-btn" onClick={this.openReposModal} variant="dark">
+          <Button
+            className="repos-btn"
+            onClick={this.openReposModal}
+            variant="dark"
+            id="open-repos-btn"
+          >
             <JournalBookmarkFill></JournalBookmarkFill> {"  Repositórios"}
           </Button>{" "}
-          <Button className="starred-btn" onClick={this.openStarredModal} variant="dark">
+          <Button
+            className="starred-btn"
+            onClick={this.openStarredModal}
+            variant="dark"
+            id="open-starred-btn"
+          >
             <StarFill></StarFill> {" Starred"}
           </Button>
         </div>

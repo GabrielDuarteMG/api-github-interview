@@ -4,26 +4,40 @@ import { Form, Col, InputGroup, FormControl, Button } from "react-bootstrap";
 import "./Users.scss";
 import { toast } from "react-toastify";
 import UserDetail from "./components/UserDetail";
-import { Search } from "react-bootstrap-icons";
 
 export default class Users extends Component {
+
+  
   constructor(props) {
     super(props);
     this.callGithubUrl = this.callGithubUrl.bind(this);
     this.state = {
       userName:
-        this.props.match && this.props.match.params.userName
+        this.props["match"] &&
+        this.props["match"]["params"] &&
+        this.props.match.params.userName
           ? this.props.match.params.userName
           : "",
       userSelected: null,
     };
-    if (this.state.userName) {
-      this.callGithubUrl();
+  }
+  componentWillMount() {
+    if (
+      this.props["match"] &&
+      this.props["match"]["params"] &&
+      this.props.match.params.userName
+    ) {
+      window["loading"] = true;
+      setTimeout(() => {
+        this.callGithubUrl();
+      }, 1000);
     }
   }
 
   callGithubUrl() {
     this.setState({ userSelected: null });
+    // Ignorado testes por vinculo axios
+    /* istanbul ignore next */
     axios
       .get(`https://api.github.com/users/${this.state.userName}`)
       .then((resp) => {
@@ -53,13 +67,16 @@ export default class Users extends Component {
     return (
       <div className="w-75 content">
         <Form
-          onKeyPress={(e) => {
-            // Prevent submit form
-            if (e.key === "Enter") {
-              e.preventDefault();
-              return false;
+          onKeyPress={
+            // Testes ignorados para modo de entrada
+            /* istanbul ignore next */
+            (e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                return false;
+              }
             }
-          }}
+          }
         >
           <h5> Buscar nome de usuário</h5>
           <Form.Row className="align-items-center username-input">
@@ -73,6 +90,8 @@ export default class Users extends Component {
                   value={this.state.userName}
                   onChange={(e) => this.setState({ userName: e.target.value })}
                   onKeyPress={(e) => {
+                    // Testes ignorados para modo de entrada
+                    /* istanbul ignore next */
                     if (e.key === "Enter") this.callGithubUrl();
                   }}
                   placeholder="Username"
@@ -86,8 +105,7 @@ export default class Users extends Component {
                 onClick={this.callGithubUrl}
                 className="mb-2"
               >
-                <Search />
-                {" Buscar"}
+                Buscar
               </Button>
             </Col>
           </Form.Row>

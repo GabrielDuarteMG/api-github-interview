@@ -17,7 +17,7 @@ export default class App extends Component {
     return (
       <LoadingOverlay active={this.state.isLoading} spinner text="Carregando...">
         <div className="App">
-          <Header></Header>
+          <Header ></Header>
 
           <div className="app-container">
             <ToastContainer
